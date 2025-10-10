@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Source_Serif_4 , Inter} from 'next/font/google'
 import Navbar from '@/components/Navbar'
-import GoogleAnalytics from '@/provider/GoogleAnalytics'
 import JsonLd from '@/provider/JsonLd'
 import TallyProvider from '../provider/TallyProvider'
 const sourceSerif4 = Source_Serif_4({ subsets: ['latin'], variable: '--font-serif' })
@@ -99,7 +98,6 @@ export default function RootLayout({
       <head>
         <script async src="https://tally.so/widgets/embed.js"></script>
         <JsonLd />
-        <GoogleAnalytics />
       </head>
       <body className={`${sourceSerif4.variable} ${inter.variable} antialiased`}>
         <TallyProvider>
