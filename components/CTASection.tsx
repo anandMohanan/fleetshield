@@ -24,9 +24,9 @@ export default function CTASection() {
           <TallyButton size="lg">
             Request Demo
           </TallyButton>
-          <Link href={"mailto:info@fleetshield.ai"} className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+          {/* <Link href={"mailto:info@fleetshield.ai"} className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
             info@fleetshield.ai
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

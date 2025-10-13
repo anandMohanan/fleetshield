@@ -104,11 +104,11 @@ export default function Navbar() {
                 {item}
               </button>
             ))}
-            <Button className="bg-primary-foreground text-primary mt-2" asChild>
+            {/* <Button className="bg-primary-foreground text-primary mt-2" asChild>
               <Link href="mailto:info@fleetshield.ai?subject=FleetShield%20Inquiry" aria-label="Contact FleetShield">
                 Contact Us
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       )}
