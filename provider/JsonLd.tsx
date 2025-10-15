@@ -18,11 +18,20 @@ export default function JsonLd() {
               "https://twitter.com/fleetshield",
               "https://linkedin.com/company/fleetshield"
             ],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "availableLanguage": "English"
-            }
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "general",
+                "email": "prageeth@fleetshiled.ai",
+                "availableLanguage": "English"
+              },
+              {
+                "@type": "ContactPoint",
+                "contactType": "business",
+                "email": "anandmohanan@fleetshield.ai",
+                "availableLanguage": "English"
+              }
+            ]
           })
         }}
       />

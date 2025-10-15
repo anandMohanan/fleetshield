@@ -2,8 +2,13 @@ import { Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const footerSections = [
- 
- 
+  {
+    title: "Contact",
+    links: [
+      { name: "prageeth@fleetshiled.ai", href: "mailto:prageeth@fleetshiled.ai" },
+      { name: "anandmohanan@fleetshield.ai", href: "mailto:anandmohanan@fleetshield.ai" }
+    ]
+  },
   {
     title: "Legal",
     links: [
