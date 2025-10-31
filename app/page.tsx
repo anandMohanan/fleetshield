@@ -1,9 +1,7 @@
 "use client";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BentoGrid from "@/components/BentoGrid";
 import ProductShowcase from "@/components/ProductShowcase";
-import HowItWorks from "@/components/HowItWorks";
 import SocialProof from "@/components/SocialProof";
 import Pricing from "@/components/Pricing";
 import CTASection from "@/components/CTASection";
@@ -50,7 +48,6 @@ export default function LandingPage() {
       className="relative w-full min-h-screen bg-white"
     >
       <div data-scroll-section>
-        <Navbar />
         <HeroSection />
       </div>
 
@@ -62,7 +59,13 @@ export default function LandingPage() {
         <ProductShowcase />
       </div>
 
+      <div data-scroll-section>
+        <SocialProof />
+      </div>
 
+      <div data-scroll-section>
+        <Pricing />
+      </div>
 
       <div data-scroll-section>
         <About />

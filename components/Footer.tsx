@@ -1,48 +1,98 @@
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import TallyButton from '@/components/ui/TallyButton';
 
 const footerSections = [
   {
-    title: "Contact",
+    title: "Product",
     links: [
-      { name: "prageeth@fleetshiled.ai", href: "mailto:prageeth@fleetshiled.ai" },
-      { name: "anandmohanan@fleetshield.ai", href: "mailto:anandmohanan@fleetshield.ai" }
+      { name: "Features", href: "#features" },
+      { name: "FleetShield Tab", href: "#product" },
+      { name: "FleetShield Yard", href: "#product" },
+      { name: "FleetShield Health", href: "#product" },
+      { name: "Pricing", href: "#pricing" },
+    ]
+  },
+  {
+    title: "Company",
+    links: [
+      { name: "About", href: "#about" },
+      { name: "Blog", href: "#" },
+      { name: "Careers", href: "#" },
+      { name: "Press", href: "#" },
+    ]
+  },
+  {
+    title: "Support",
+    links: [
+      { name: "Documentation", href: "#" },
+      { name: "Help Center", href: "#" },
+      { name: "Contact Us", href: "#" },
+      { name: "Status", href: "#" },
     ]
   },
   {
     title: "Legal",
     links: [
       { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "#" },
+      { name: "Cookie Policy", href: "#" },
+      { name: "GDPR", href: "#" },
     ]
   }
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-muted-foreground py-16 relative overflow-hidden">
-    
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <div className="flex items-center gap-2.5 mb-6">
-              <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-sm">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
+    <footer className="bg-slate-900 text-white py-16 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-blue-500 to-emerald-500"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-semibold text-primary tracking-tight font-serif">FleetShield</span>
+              <span className="text-2xl font-bold text-white tracking-tight font-serif">FleetShield</span>
             </div>
-            <p className="text-sm leading-relaxed">
-              AI‑based vehicle safety and fleet monitoring for safer, smarter operations.
+            <p className="text-slate-300 leading-relaxed mb-6 max-w-md">
+              AI‑based vehicle safety and fleet monitoring for safer, smarter operations. Join hundreds of companies already protecting their drivers and assets.
             </p>
+
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-slate-300">
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="text-sm">hello@fleetshield.ai</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-300">
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="text-sm">+1 (555) 123-4567</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-300">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span className="text-sm">San Francisco, CA</span>
+              </div>
+            </div>
           </div>
+
+          {/* Footer Links */}
           {footerSections.map((section, index) => (
             <div key={index}>
-              <h4 className="text-primary-foreground font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-3 text-sm">
+              <h4 className="text-white font-semibold mb-4 text-lg">{section.title}</h4>
+              <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+                      className="text-slate-300 hover:text-primary transition-colors text-sm"
                     >
                       {link.name}
                     </Link>
@@ -53,9 +103,43 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-16 pb-8">
-       
-          <p className="text-sm text-center text-muted-foreground">© 2025 FleetShield. All rights reserved.</p>
+        {/* Newsletter Signup */}
+        <div className="bg-slate-800 rounded-2xl p-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-xl font-serif text-white mb-2">Stay Updated</h3>
+              <p className="text-slate-300 text-sm">Get the latest updates on AI safety technology and fleet management insights.</p>
+            </div>
+            <div className="flex gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <Button className="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg">
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-slate-700 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-slate-400 text-sm">© 2025 FleetShield. All rights reserved.</p>
+
+            <div className="flex items-center gap-6">
+              <Link href="#" className="text-slate-400 hover:text-primary transition-colors text-sm">
+                Twitter
+              </Link>
+              <Link href="#" className="text-slate-400 hover:text-primary transition-colors text-sm">
+                LinkedIn
+              </Link>
+              <Link href="#" className="text-slate-400 hover:text-primary transition-colors text-sm">
+                GitHub
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
