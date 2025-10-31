@@ -103,25 +103,7 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="bg-slate-800 rounded-2xl p-8 mb-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-xl font-serif text-white mb-2">Stay Updated</h3>
-              <p className="text-slate-300 text-sm">Get the latest updates on AI safety technology and fleet management insights.</p>
-            </div>
-            <div className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <Button className="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
+    
 
         {/* Bottom Section */}
         <div className="border-t border-slate-700 pt-8">
